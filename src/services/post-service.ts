@@ -13,7 +13,6 @@ const postDirectory = path.join(process.cwd(), "src", "posts");
 export const getAllPostsMetaData = (subDirectory: string) => {
   //Reads all the files in the post directory
   const fileNames = fs.readdirSync(path.join(postDirectory, subDirectory));
-  console.log(fileNames);
 
   const allPostsData: IPostMetaData[] = fileNames.flatMap((filename) => {
     const slug = filename.replace(".mdx", "");

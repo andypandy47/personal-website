@@ -10,3 +10,18 @@ export const Links = {
   YoutubeChannel: "https://www.youtube.com/channel/UCEAI5uTSFNtCbXGlCKZgwuQ",
   TwitterProfile: "https://twitter.com/AudioPandy",
 };
+
+export const NavLinks: { link: string; text: string }[] = [
+  {
+    link: `/#${SectionIds.Landing}`,
+    text: "HOME",
+  },
+  {
+    link: `/#${SectionIds.Projects}`,
+    text: "PROJECTS",
+  },
+  {
+    link: `/#${SectionIds.AboutMe}`,
+    text: "ABOUT",
+  },
+];

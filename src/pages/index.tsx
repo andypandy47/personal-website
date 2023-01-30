@@ -1,7 +1,7 @@
 import React from "react";
 import { Inter } from "@next/font/google";
 import { NextPage } from "next";
-import ProjectCard from "components/project-card";
+import ProjectCard from "components/projects/project-card";
 import Meta from "components/meta";
 import { SectionIds } from "constants/site-constants";
 import { GetStaticProps } from "next/types";

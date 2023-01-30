@@ -36,7 +36,7 @@ const useClickOutsideCallback = (
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref, callback]);
+  }, [ref, callback, excludeElements]);
 };
 
 export default useClickOutsideCallback;
