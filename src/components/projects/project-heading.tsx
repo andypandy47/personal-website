@@ -27,9 +27,12 @@ const ProjectHeading = ({
           <IconLinks.Github
             link={githubLink}
             fill="black"
-            className="w-5 h-5 mr-3 md:mr-5"
+            className="w-5 h-5 mr-3 transition-colors md:mr-5 hover:text-slate-600"
           />
-          <IconLinks.External link={websiteLink} className="w-5 h-5" />
+          <IconLinks.External
+            link={websiteLink}
+            className="w-5 h-5 transition-colors hover:text-slate-600"
+          />
         </div>
       </div>
     </div>

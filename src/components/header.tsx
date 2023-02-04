@@ -17,7 +17,7 @@ const Header = ({ className = "" }: IHeaderProps) => {
         <Link
           key={navLink.text}
           href={navLink.link}
-          className={`px-6 text-sm tracking-widest border-solid text-white font-extralight border-gray-400 hidden lg:flex ${
+          className={`px-6 text-sm tracking-widest border-solid text-white font-extralight border-gray-400 hidden transition-colors hover:text-slate-600 lg:flex ${
             index === NavLinks.length - 1 ? "" : "border-r"
           }`}
           scroll={false}

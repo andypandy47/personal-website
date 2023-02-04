@@ -30,12 +30,7 @@ const IconLinks = {
       </Link>
     );
   },
-  LinkedIn: ({
-    className = defaultStyle,
-  }: {
-    fill?: string;
-    className?: string;
-  }) => {
+  LinkedIn: ({ className = defaultStyle }: { className?: string }) => {
     return (
       <Link
         href={Links.LinkedInProfile}
@@ -53,12 +48,7 @@ const IconLinks = {
       </Link>
     );
   },
-  Twitter: ({
-    className = defaultStyle,
-  }: {
-    fill?: string;
-    className?: string;
-  }) => {
+  Twitter: ({ className = defaultStyle }: { className?: string }) => {
     return (
       <Link
         href={Links.TwitterProfile}
@@ -76,12 +66,7 @@ const IconLinks = {
       </Link>
     );
   },
-  Youtube: ({
-    className = defaultStyle,
-  }: {
-    fill?: string;
-    className?: string;
-  }) => {
+  Youtube: ({ className = defaultStyle }: { className?: string }) => {
     return (
       <Link
         href={Links.YoutubeChannel}
@@ -104,7 +89,6 @@ const IconLinks = {
     className = defaultStyle,
   }: {
     link: string;
-    stroke?: string;
     className?: string;
   }) => {
     return (

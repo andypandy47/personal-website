@@ -23,14 +23,14 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
     <>
       <Meta />
       <main
-        className={`${inter.className} flex flex-col flex-1 min-h-screen justify-center items-center w-full m-auto snap-mandatory snap-y lg:w-3/4 xl:w-4/6 2xl:w-1/2`}
+        className={`${inter.className} flex flex-col flex-1 min-safe-h-screen justify-center items-center w-full m-auto snap-mandatory snap-y lg:w-3/4 xl:w-4/6 2xl:w-1/2`}
       >
         <Header className="absolute top-0 lg:w-3/4 xl:w-4/6 2xl:w-1/2" />
         <section
-          className="flex flex-col items-center w-full h-screen snap-center"
+          className="flex flex-col items-center w-full min-safe-h-screen snap-center"
           id={SectionIds.Landing}
         >
-          <div className="flex flex-col justify-center h-3/4">
+          <div className="flex flex-col justify-center flex-1">
             <div className="pb-4 border-b-4 border-black border-solid">
               <p className="text-lg tracking-wide md:text-xl xl:text-2xl">
                 Hi,
@@ -42,18 +42,17 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
                 a Software Developer
               </h2>
             </div>
-            <div className="flex justify-around py-4">
+            <div className="flex justify-around py-4 text-black">
               <IconLinks.Github
                 link="https://github.com/andypandy47?tab=repositories"
-                fill="black"
-                className="w-5 h-5"
+                className="w-5 h-5 transition-colors hover:text-slate-400"
               />
-              <IconLinks.LinkedIn fill="black" className="w-5 h-5" />
-              <IconLinks.Twitter fill="black" className="w-5 h-5" />
-              <IconLinks.Youtube fill="black" className="w-5 h-5" />
+              <IconLinks.LinkedIn className="w-5 h-5 transition-colors hover:text-slate-400" />
+              <IconLinks.Twitter className="w-5 h-5 transition-colors hover:text-slate-400" />
+              <IconLinks.Youtube className="w-5 h-5 transition-colors hover:text-slate-400" />
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center w-full h-1/2">
+          <div className="flex flex-col items-center justify-center flex-1 w-full">
             <a role="button" className="" href={`#${SectionIds.Projects}`}>
               View my work{" "}
               <svg
@@ -74,7 +73,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </div>
         </section>
         <section
-          className="flex flex-col items-center w-full h-screen px-6 snap-center"
+          className="flex flex-col items-center w-full px-6 min-safe-h-screen snap-center"
           id={SectionIds.Projects}
         >
           <div className="flex items-center w-full h-8 mb-4">
@@ -83,7 +82,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               PROJECTS
             </h2>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center flex-1">
             {projectData.map((data) => {
               return (
                 <ProjectCard
@@ -94,7 +93,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               );
             })}
           </div>
-          <div className="flex items-end justify-center flex-1 w-full pb-24">
+          <div className="flex items-end justify-center w-full pb-24">
             <a
               role="button"
               className="flex flex-col items-center justify-center"
@@ -119,7 +118,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </div>
         </section>
         <section
-          className="flex flex-col items-center w-full h-screen snap-center"
+          className="flex flex-col items-center w-full min-safe-h-screen snap-center"
           id={SectionIds.AboutMe}
         >
           <div className="flex items-center w-full h-8 px-6 mb-4">
