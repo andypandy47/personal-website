@@ -1,5 +1,4 @@
 import React from "react";
-import { Inter } from "@next/font/google";
 import { NextPage } from "next";
 import ProjectCard from "components/projects/project-card";
 import Meta from "components/meta";
@@ -12,8 +11,6 @@ import Footer from "components/footer";
 import Header from "components/header";
 import IconLinks from "components/icon-links";
 
-const inter = Inter({ subsets: ["latin"] });
-
 interface IHomeProps {
   projectData: IPostMetaData[];
 }
@@ -22,16 +19,14 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
   return (
     <>
       <Meta />
-      <main
-        className={`${inter.className} flex flex-col flex-1 min-safe-h-screen justify-center items-center w-full m-auto snap-mandatory snap-y lg:w-3/4 xl:w-4/6 2xl:w-1/2`}
-      >
-        <Header className="absolute top-0 lg:w-3/4 xl:w-4/6 2xl:w-1/2" />
+      <main className="flex flex-col items-center justify-center flex-1 w-full m-auto text-black dark:text-white min-safe-h-screen snap-mandatory snap-y lg:w-3/4 xl:w-4/6 2xl:w-1/2">
         <section
           className="flex flex-col items-center w-full min-safe-h-screen snap-center"
           id={SectionIds.Landing}
         >
+          <Header className="w-full" />
           <div className="flex flex-col justify-center flex-1">
-            <div className="pb-4 border-b-4 border-black border-solid">
+            <div className="pb-4 border-b-4 border-black border-solid dark:border-white">
               <p className="text-lg tracking-wide md:text-xl xl:text-2xl">
                 Hi,
               </p>
@@ -42,7 +37,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
                 a Software Developer
               </h2>
             </div>
-            <div className="flex justify-around py-4 text-black">
+            <div className="flex justify-around py-4">
               <IconLinks.Github
                 link="https://github.com/andypandy47?tab=repositories"
                 className="w-5 h-5 transition-colors hover:text-slate-400"
@@ -53,7 +48,11 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center flex-1 w-full">
-            <a role="button" className="" href={`#${SectionIds.Projects}`}>
+            <a
+              role="button"
+              className="transition-colors hover:text-slate-400"
+              href={`#${SectionIds.Projects}`}
+            >
               View my work{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +76,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           id={SectionIds.Projects}
         >
           <div className="flex items-center w-full h-8 mb-4">
-            <div className="w-8 h-1 bg-black" />
+            <div className="w-8 h-1 bg-black dark:bg-white" />
             <h2 className="flex items-center ml-2 text-xs font-bold">
               PROJECTS
             </h2>
@@ -96,7 +95,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           <div className="flex items-end justify-center w-full pb-24">
             <a
               role="button"
-              className="flex flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center transition-colors hover:text-slate-400"
               href={`#${SectionIds.AboutMe}`}
             >
               About me{" "}
@@ -122,7 +121,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           id={SectionIds.AboutMe}
         >
           <div className="flex items-center w-full h-8 px-6 mb-4">
-            <div className="w-8 h-1 bg-black" />
+            <div className="w-8 h-1 bg-black dark:bg-white" />
             <h2 className="flex items-center ml-2 text-xs font-bold">
               ABOUT ME
             </h2>

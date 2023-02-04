@@ -12,15 +12,15 @@ const ProjectCard = ({ name, detail }: IProjectCardProps) => {
       <Link
         role="button"
         href={`/projects/${name.toLowerCase()}`}
-        className="flex flex-col w-full text-left"
+        className="flex flex-col w-full text-left transition-colors hover:text-slate-400"
       >
-        <h3 className="text-3xl font-semibold mb-4">{name}</h3>
-        <p className="text-sm mb-4">{detail}</p>
+        <h3 className="mb-4 text-3xl font-semibold">{name}</h3>
+        <p className="mb-4 text-sm">{detail}</p>
         <div role="button" className="text-xs font-light">
           View more -&gt;
         </div>
       </Link>
-      <hr className="border-solid border-black border-1 my-4 h-px w-full" />
+      <hr className="w-full h-px my-4 border-black border-solid dark:border-white border-1" />
     </>
   );
 };

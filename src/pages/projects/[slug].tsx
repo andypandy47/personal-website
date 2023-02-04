@@ -25,7 +25,7 @@ const Project: NextPage<IProjectProps> = ({
   return (
     <>
       <Meta />
-      <main className="flex flex-col min-h-screen w-full lg:w-3/4 xl:w-4/6 2xl:w-1/2 m-auto">
+      <main className="flex flex-col w-full min-h-screen m-auto text-black dark:text-white lg:w-3/4 xl:w-4/6 2xl:w-1/2">
         <Header />
         <ProjectHeading
           title={metaData.title}
@@ -33,7 +33,7 @@ const Project: NextPage<IProjectProps> = ({
           githubLink={metaData.githubLink}
           websiteLink={metaData.websiteLink}
         />
-        <article className="px-6 my-4 text-sm flex-1">
+        <article className="flex-1 px-6 my-4 text-sm">
           <MDXRemote {...mdxSource} components={components} />
         </article>
         <Footer />

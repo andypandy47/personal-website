@@ -14,14 +14,12 @@ const ProjectHeading = ({
   websiteLink,
   technologies,
 }: IProjectHeadingProps) => {
-  console.log(githubLink);
-
   return (
     <div className="flex flex-col">
-      <h1 className="mx-6 my-4 text-4xl font-bold tracking-wide uppercase md:my-6">
+      <h1 className="mx-6 my-4 text-4xl font-bold tracking-wide uppercase">
         {title}
       </h1>
-      <div className="flex items-center justify-between pb-2 mx-6 border-b-4 border-black border-solid">
+      <div className="flex items-center justify-between pb-2 mx-6 border-b-4 border-black border-solid dark:border-white">
         <p className="text-xs font-light">{technologies}</p>
         <div className="flex">
           <IconLinks.Github
