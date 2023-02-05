@@ -5,9 +5,9 @@ import { getAllPostSlugs, getPost } from "services/post-service";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { IPostMetaData } from "constants/post-interfaces";
-import Meta from "components/meta";
 import ProjectHeading from "components/projects/project-heading";
 import ImageSection from "components/image-section";
+import Layout from "components/layout";
 
 interface IProjectProps {
   mdxSource: MDXRemoteSerializeResult;
@@ -22,18 +22,21 @@ const Project: NextPage<IProjectProps> = ({
 }: IProjectProps) => {
   return (
     <>
-      <Meta />
-      <main className="flex flex-col w-full min-h-screen pb-10 m-auto text-black dark:text-white lg:w-3/4 xl:w-4/6 2xl:w-1/2 lg:pt-10 lg:pb-12">
+      <Layout
+        title={metaData.title}
+        description={"Description of a project I've worked on"}
+        url={`https://www.andrew-kay.com/projects/${metaData.title.toLowerCase()}`}
+      >
         <ProjectHeading
           title={metaData.title}
           technologies={metaData.technologies}
           githubLink={metaData.githubLink}
           websiteLink={metaData.websiteLink}
         />
-        <article className="flex-1 px-6 my-4 text-sm">
+        <article className="flex-1 px-6 pb-10 my-4 text-sm lg:pb-12">
           <MDXRemote {...mdxSource} components={components} />
         </article>
-      </main>
+      </Layout>
     </>
   );
 };

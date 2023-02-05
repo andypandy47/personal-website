@@ -1,16 +1,14 @@
 import React from "react";
 import { NextPage } from "next";
 import ProjectCard from "components/projects/project-card";
-import Meta from "components/meta";
 import { SectionIds } from "constants/site-constants";
 import { GetStaticProps } from "next/types";
 import { getAllPostsMetaData } from "services/post-service";
 import { IPostMetaData } from "constants/post-interfaces";
 import Link from "next/link";
-import Footer from "components/footer";
-import Header from "components/header";
 import IconLinks from "components/icon-links";
 import { motion } from "framer-motion";
+import Layout from "components/layout";
 
 interface IHomeProps {
   projectData: IPostMetaData[];
@@ -19,11 +17,13 @@ interface IHomeProps {
 const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
   return (
     <>
-      <Meta />
-      <Header />
-      <main className="flex flex-col items-center justify-center flex-1 w-full m-auto text-black dark:text-white min-safe-h-screen lg:w-3/4 xl:w-4/6 2xl:w-1/2">
+      <Layout
+        title="Andrew Kay - andrew-kay.com"
+        description="Info about myself and the projects I've developed in my spare time"
+        url="https://www.andrew-kay.com"
+      >
         <section
-          className="flex flex-col items-center w-full lg:pt-10 safe-h-screen snap-center"
+          className="flex flex-col items-center w-full lg:pt-10 min-safe-h-screen snap-center"
           id={SectionIds.Landing}
         >
           <div className="flex flex-col justify-center flex-1">
@@ -110,7 +110,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </motion.div>
         </section>
         <section
-          className="flex flex-col items-center w-full px-6 safe-h-screen snap-center lg:pt-10"
+          className="flex flex-col items-center w-full px-6 min-safe-h-screen snap-center lg:pt-10"
           id={SectionIds.Projects}
         >
           <div className="flex items-center w-full h-8 mb-4">
@@ -131,7 +131,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
             })}
           </div>
           <motion.div
-            className="flex items-end justify-center w-full pb-24"
+            className="flex items-center justify-center flex-1 w-full"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -161,7 +161,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </motion.div>
         </section>
         <section
-          className="flex flex-col items-center w-full lg:pt-10 safe-h-screen snap-center"
+          className="flex flex-col items-center w-full lg:pt-10 min-safe-h-screen snap-center"
           id={SectionIds.AboutMe}
         >
           <div className="flex items-center w-full h-8 px-6 mb-4">
@@ -208,8 +208,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
             </p>
           </motion.div>
         </section>
-      </main>
-      <Footer />
+      </Layout>
     </>
   );
 };

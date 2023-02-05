@@ -15,8 +15,8 @@ const ProjectHeading = ({
   technologies,
 }: IProjectHeadingProps) => {
   return (
-    <div className="flex flex-col">
-      <h1 className="mx-6 my-4 text-4xl font-bold tracking-wide uppercase">
+    <div className="flex flex-col w-full">
+      <h1 className="mx-6 my-4 text-3xl font-bold tracking-wide uppercase md:text-4xl">
         {title}
       </h1>
       <div className="flex items-center justify-between pb-2 mx-6 border-b-4 border-black border-solid dark:border-white">

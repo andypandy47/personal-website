@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./animations.css";
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -82,5 +80,11 @@ article h2 {
 @media screen and (min-width: 768px) {
   html {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-height: 380px) {
+  html {
+    font-size: 14px;
   }
 }

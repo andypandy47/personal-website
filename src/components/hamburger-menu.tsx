@@ -24,7 +24,9 @@ const HamburgerMenu = () => {
       <button
         className="absolute top-0 right-0 z-10 flex flex-col items-center justify-around w-6 h-6 mt-2 mr-2 cursor-pointer md:mt-4 md:mr-4 lg:hidden"
         onClick={() => setMenuIsOpen(!menuIsOpen)}
-        id="hamburger-menu-button"
+        id="nav-menu-button"
+        aria-label="nav-menu"
+        aria-labelledby="none"
         ref={menuButtonRef}
       >
         <span
