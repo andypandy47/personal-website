@@ -7,6 +7,7 @@ interface IImageSectionProps {
   height: number;
   description: string;
   alt: string;
+  priority?: boolean;
   className?: string;
 }
 
@@ -16,6 +17,7 @@ const ImageSection = ({
   height,
   description,
   alt,
+  priority = false,
   className = "",
 }: IImageSectionProps) => {
   return (
@@ -25,6 +27,7 @@ const ImageSection = ({
         height={height}
         src={src}
         alt={alt}
+        priority={priority}
         className={`m-auto ${className}`}
       />
       <p className="text-xs italic font-thin dark:text-gray-300">

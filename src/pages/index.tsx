@@ -19,9 +19,9 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
   return (
     <>
       <Meta />
-      <main className="flex flex-col items-center justify-center flex-1 w-full m-auto text-black dark:text-white min-safe-h-screen snap-mandatory snap-y lg:w-3/4 xl:w-4/6 2xl:w-1/2">
+      <main className="flex flex-col items-center justify-center flex-1 w-full m-auto text-black dark:text-white min-safe-h-screen snap-y lg:w-3/4 xl:w-4/6 2xl:w-1/2">
         <section
-          className="flex flex-col items-center w-full min-safe-h-screen snap-center"
+          className="flex flex-col items-center w-full safe-h-screen snap-center"
           id={SectionIds.Landing}
         >
           <Header className="w-full" />
@@ -72,7 +72,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </div>
         </section>
         <section
-          className="flex flex-col items-center w-full px-6 min-safe-h-screen snap-center"
+          className="flex flex-col items-center w-full px-6 safe-h-screen snap-center"
           id={SectionIds.Projects}
         >
           <div className="flex items-center w-full h-8 mb-4">
@@ -117,7 +117,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </div>
         </section>
         <section
-          className="flex flex-col items-center w-full min-safe-h-screen snap-center"
+          className="flex flex-col items-center w-full safe-h-screen snap-center"
           id={SectionIds.AboutMe}
         >
           <div className="flex items-center w-full h-8 px-6 mb-4">
@@ -157,7 +157,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               ever-evolving industry.
             </p>
           </div>
-          <div className="flex items-end flex-1 w-full">
+          <div className="flex items-end flex-1 w-full mt-4">
             <Footer />
           </div>
         </section>
