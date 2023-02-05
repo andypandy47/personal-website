@@ -10,6 +10,7 @@ import Link from "next/link";
 import Footer from "components/footer";
 import Header from "components/header";
 import IconLinks from "components/icon-links";
+import { motion } from "framer-motion";
 
 interface IHomeProps {
   projectData: IPostMetaData[];
@@ -19,25 +20,57 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
   return (
     <>
       <Meta />
-      <main className="flex flex-col items-center justify-center flex-1 w-full m-auto text-black dark:text-white min-safe-h-screen snap-y lg:w-3/4 xl:w-4/6 2xl:w-1/2">
+      <Header />
+      <main className="flex flex-col items-center justify-center flex-1 w-full m-auto text-black dark:text-white min-safe-h-screen lg:w-3/4 xl:w-4/6 2xl:w-1/2">
         <section
-          className="flex flex-col items-center w-full safe-h-screen snap-center"
+          className="flex flex-col items-center w-full lg:pt-10 safe-h-screen snap-center"
           id={SectionIds.Landing}
         >
-          <Header className="w-full" />
           <div className="flex flex-col justify-center flex-1">
-            <div className="pb-4 border-b-4 border-black border-solid dark:border-white">
-              <p className="text-lg tracking-wide md:text-xl xl:text-2xl">
-                Hi,
-              </p>
-              <h1 className="text-lg tracking-wide md:text-xl xl:text-2xl">
-                I&apos;m <span className="tracking-widest">Andrew Kay</span>,
-              </h1>
-              <h2 className="text-2xl font-bold tracking-wide md:text-4xl xl:text-5xl">
-                a Software Developer
-              </h2>
+            <div className="pb-4 dark:border-white">
+              <div className="overflow-hidden">
+                <motion.p
+                  className="text-lg tracking-wide md:text-xl xl:text-2xl"
+                  animate={{ y: 0 }}
+                  initial={{ y: 50 }}
+                  transition={{ duration: 1 }}
+                >
+                  Hi,
+                </motion.p>
+              </div>
+              <div className="overflow-hidden">
+                <motion.h1
+                  className="text-lg tracking-wide md:text-xl xl:text-2xl"
+                  animate={{ y: 0 }}
+                  initial={{ y: 50 }}
+                  transition={{ delay: 0.3, duration: 1 }}
+                >
+                  I&apos;m <span className="tracking-widest">Andrew Kay</span>,
+                </motion.h1>
+              </div>
+              <div className="overflow-hidden">
+                <motion.h2
+                  className="text-2xl font-bold tracking-wide md:text-4xl xl:text-5xl"
+                  animate={{ y: 0 }}
+                  initial={{ y: 100 }}
+                  transition={{ delay: 0.5, duration: 1 }}
+                >
+                  a Software Developer
+                </motion.h2>
+              </div>
             </div>
-            <div className="flex justify-around py-4">
+            <motion.div
+              className="bg-black dark:bg-white h-[4px]"
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            ></motion.div>
+            <motion.div
+              className="flex justify-around py-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 1 }}
+            >
               <IconLinks.Github
                 link="https://github.com/andypandy47?tab=repositories"
                 className="w-5 h-5 transition-colors hover:text-slate-400"
@@ -45,9 +78,14 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               <IconLinks.LinkedIn className="w-5 h-5 transition-colors hover:text-slate-400" />
               <IconLinks.Twitter className="w-5 h-5 transition-colors hover:text-slate-400" />
               <IconLinks.Youtube className="w-5 h-5 transition-colors hover:text-slate-400" />
-            </div>
+            </motion.div>
           </div>
-          <div className="flex flex-col items-center justify-center flex-1 w-full">
+          <motion.div
+            className="flex flex-col items-center justify-center flex-1 w-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
             <a
               role="button"
               className="transition-colors hover:text-slate-400"
@@ -69,10 +107,10 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
                 />
               </svg>
             </a>
-          </div>
+          </motion.div>
         </section>
         <section
-          className="flex flex-col items-center w-full px-6 safe-h-screen snap-center"
+          className="flex flex-col items-center w-full px-6 safe-h-screen snap-center lg:pt-10"
           id={SectionIds.Projects}
         >
           <div className="flex items-center w-full h-8 mb-4">
@@ -81,7 +119,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               PROJECTS
             </h2>
           </div>
-          <div className="flex flex-col items-center flex-1">
+          <div className="flex flex-col items-center flex-1 w-full">
             {projectData.map((data) => {
               return (
                 <ProjectCard
@@ -92,7 +130,13 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               );
             })}
           </div>
-          <div className="flex items-end justify-center w-full pb-24">
+          <motion.div
+            className="flex items-end justify-center w-full pb-24"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <a
               role="button"
               className="flex flex-col items-center justify-center transition-colors hover:text-slate-400"
@@ -114,10 +158,10 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
                 />
               </svg>
             </a>
-          </div>
+          </motion.div>
         </section>
         <section
-          className="flex flex-col items-center w-full safe-h-screen snap-center"
+          className="flex flex-col items-center w-full lg:pt-10 safe-h-screen snap-center"
           id={SectionIds.AboutMe}
         >
           <div className="flex items-center w-full h-8 px-6 mb-4">
@@ -126,7 +170,13 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               ABOUT ME
             </h2>
           </div>
-          <div className="px-6">
+          <motion.div
+            className="px-6"
+            initial={{ opacity: 0, x: 500 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <p className="mb-4">
               I am a software developer with a passion for technology and
               innovation. I currently work at{" "}
@@ -156,12 +206,10 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               the world for the better and am excited to be a part of this
               ever-evolving industry.
             </p>
-          </div>
-          <div className="flex items-end flex-1 w-full mt-4">
-            <Footer />
-          </div>
+          </motion.div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

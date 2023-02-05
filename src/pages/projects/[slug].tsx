@@ -7,9 +7,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { IPostMetaData } from "constants/post-interfaces";
 import Meta from "components/meta";
 import ProjectHeading from "components/projects/project-heading";
-import Header from "components/header";
 import ImageSection from "components/image-section";
-import Footer from "components/footer";
 
 interface IProjectProps {
   mdxSource: MDXRemoteSerializeResult;
@@ -25,8 +23,7 @@ const Project: NextPage<IProjectProps> = ({
   return (
     <>
       <Meta />
-      <main className="flex flex-col w-full min-h-screen m-auto text-black dark:text-white lg:w-3/4 xl:w-4/6 2xl:w-1/2">
-        <Header />
+      <main className="flex flex-col w-full min-h-screen pb-10 m-auto text-black dark:text-white lg:w-3/4 xl:w-4/6 2xl:w-1/2 lg:pt-10 lg:pb-12">
         <ProjectHeading
           title={metaData.title}
           technologies={metaData.technologies}
@@ -36,7 +33,6 @@ const Project: NextPage<IProjectProps> = ({
         <article className="flex-1 px-6 my-4 text-sm">
           <MDXRemote {...mdxSource} components={components} />
         </article>
-        <Footer />
       </main>
     </>
   );
