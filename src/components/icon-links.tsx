@@ -19,6 +19,7 @@ const IconLinks = {
         target="_blank"
         rel="noopener noref"
         className={className}
+        aria-label="Github link"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +38,7 @@ const IconLinks = {
         target="_blank"
         rel="noopener noref"
         className={className}
+        aria-label="LinkedIn profile"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +57,7 @@ const IconLinks = {
         target="_blank"
         rel="noopener noref"
         className={className}
+        aria-label="Twitter profile"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +76,7 @@ const IconLinks = {
         target="_blank"
         rel="noopener noref"
         className={className}
+        aria-label="Youtube channel"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +101,7 @@ const IconLinks = {
         target="_blank"
         rel="noopener noref"
         className={className}
+        aria-label="Link to featured web application"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

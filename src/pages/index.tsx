@@ -207,6 +207,17 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
               ever-evolving industry.
             </p>
           </motion.div>
+          <motion.address className="flex flex-col items-center flex-1 w-full px-6 py-12">
+            <h3 className="mr-4 text-base font-thin underline underline-offset-4">
+              CONTACT :
+            </h3>
+            <a
+              href="mailto:apgk95@hotmail.co.uk"
+              className="mt-2 tracking-wide hover:underline"
+            >
+              apgk95@hotmail.co.uk
+            </a>
+          </motion.address>
         </section>
       </Layout>
     </>
