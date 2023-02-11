@@ -11,7 +11,7 @@ const ProjectCard = ({ name, detail }: IProjectCardProps) => {
   return (
     <motion.div
       className="w-full"
-      initial={{ opacity: 0, x: 500 }}
+      initial={{ opacity: 0, x: 200 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}

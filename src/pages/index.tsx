@@ -23,7 +23,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
         url="https://www.andrew-kay.com"
       >
         <section
-          className="flex flex-col items-center w-full lg:pt-10 min-safe-h-screen snap-center"
+          className="flex flex-col items-center w-full min-safe-h-screen snap-center"
           id={SectionIds.Landing}
         >
           <div className="flex flex-col justify-center flex-1">
@@ -161,7 +161,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </motion.div>
         </section>
         <section
-          className="flex flex-col items-center w-full lg:pt-10 min-safe-h-screen snap-center"
+          className="relative flex flex-col items-center w-full lg:pt-10 min-safe-h-screen snap-center"
           id={SectionIds.AboutMe}
         >
           <div className="flex items-center w-full h-8 px-6 mb-4">
@@ -172,7 +172,7 @@ const Home: NextPage<IHomeProps> = ({ projectData }: IHomeProps) => {
           </div>
           <motion.div
             className="px-6"
-            initial={{ opacity: 0, x: 500 }}
+            initial={{ opacity: 0, x: 200 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
