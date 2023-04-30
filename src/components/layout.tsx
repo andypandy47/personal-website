@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import React, { ReactNode } from "react";
 import Footer from "./footer";
+import Header from "./header";
 
 interface ILayoutProps {
   children: ReactNode;
@@ -64,7 +65,8 @@ const Layout = ({
           },
         ]}
       />
-      <motion.main className="relative flex flex-col w-full min-h-screen m-auto text-black realtive dark:text-white lg:w-3/4 xl:w-4/6 2xl:w-1/2 lg:pt-10">
+      <motion.main className="relative flex flex-col w-full min-h-screen m-auto text-black realtive dark:text-white lg:w-3/4 xl:w-4/6 2xl:w-1/2">
+        <Header />
         {children}
         <Footer />
       </motion.main>

@@ -17,10 +17,19 @@ body,
   max-height: 100vh;
 }
 
+body {
+  /* overflow-x: hidden; */
+}
+
 #__next {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   position: relative;
+  /* overflow-x: hidden; */
+}
+
+main {
+  /* overflow-x: hidden; */
 }
 
 html {

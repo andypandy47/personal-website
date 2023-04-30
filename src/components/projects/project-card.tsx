@@ -18,8 +18,9 @@ const ProjectCard = ({ name, detail }: IProjectCardProps) => {
     >
       <Link
         role="button"
-        href={`/projects/${name.toLowerCase()}`}
+        href={`/projects/${name.toLowerCase()}#top`}
         className="flex flex-col w-full text-left transition-colors hover:text-slate-400"
+        scroll={true}
       >
         <h3 className="mb-4 text-3xl font-semibold">{name}</h3>
         <p className="mb-4 text-sm">{detail}</p>

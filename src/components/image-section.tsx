@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import darkImagePlaceholder from "/public/image_placeholder_dark.png";
 
 interface IImageSectionProps {
   src: string;
@@ -28,7 +29,9 @@ const ImageSection = ({
         src={src}
         alt={alt}
         priority={priority}
-        className={`m-auto ${className}`}
+        className={`m-auto rounded ${className}`}
+        placeholder="blur"
+        blurDataURL={darkImagePlaceholder.blurDataURL}
       />
       <p className="text-xs italic font-thin dark:text-gray-300">
         {description}
